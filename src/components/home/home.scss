@@ -102,3 +102,19 @@
 }
 
 //Font Size change ends
+
+
+@media only screen and (max-width: 1000px){
+    .info-container{
+        width: 81%;
+    }
+
+    .home-right {
+        width: 76%;
+    }
+
+    .bike {
+        width: 32%;
+
+    }
+}

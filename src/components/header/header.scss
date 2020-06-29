@@ -45,7 +45,8 @@ a{
 }
 
 .language-selector{
-    font-size: 21px;
+    font-family: 'Poiret One', cursive;
+    font-size: 23px;
     background-color: transparent;
     color: white;
     border: none;
@@ -63,6 +64,7 @@ a{
 
 .text-sizer{
     color: white;
+    font-family: 'Poiret One', cursive;
     display: flex;
 
     span{
@@ -79,4 +81,69 @@ a{
 
 }
 
-//Text sizer ends
+.menu-button{
+    display: none;
+}
+
+.MuiTypography-body1 {
+    font-size: inherit !important;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    font-family: 'Poiret One', cursive !important;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .logo{
+        font-size: 23px;
+        color: white;
+        font-family: 'Poiret One', cursive;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: 80%;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .right-nav {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        /* justify-content: flex-start; */
+        // width: 40%;
+        margin: auto;
+
+    }
+
+    .right-nav div {
+        padding: 6px 0;
+    }
+
+    .menu-button{
+        display: inline;
+    }
+
+    .right-nav-show{
+        display: block;
+    }
+
+    .right-nav-hide{
+        display: none;
+    }
+
+    .header{
+        display: block;
+    }
+
+    .center-menu{
+        display: flex;
+        justify-content: center;
+    }
+
+    .khamba{
+        display: none;
+    }
+    
+  }

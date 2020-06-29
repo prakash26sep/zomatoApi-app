@@ -60,3 +60,23 @@
     border: 2px solid black;
     margin-top: 20px;
 }
+
+
+@media only screen and (max-width: 1000px){
+    .title {
+        font-size: 60px;
+        margin: 29px 0;
+        text-align: left;
+        margin-bottom: 12px;
+        width: 91%;
+        margin: 31px auto;
+    }
+
+    .highlights {
+        display: flex;
+        width: 95%;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+}
+

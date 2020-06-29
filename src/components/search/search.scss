@@ -403,4 +403,79 @@ a{
         }
     }
 
+    .table-container{
+        overflow-x: auto;
+    }
+
 //Font Size Changer Ends
+
+@media only screen and (max-width: 1000px) {
+    .location-box {
+        // display: flex;
+        // width: 40%;
+        justify-content: center;
+        margin: auto;
+        flex-direction: column;
+    }
+
+    .place-input{
+        margin: auto;
+        width: 97%;
+    }
+
+    .location-box{
+        width: 80%;
+    }
+
+    .search-input-div {
+        padding-top: 40px;
+        width: 80%;
+        margin: auto;
+        padding-bottom: 80px;
+    }
+
+    .filter-box {
+
+        flex-direction: column;
+
+    }
+
+    .categories-filter-select {
+        width: 100%;
+        
+    }
+
+    .select-box-filtration {
+        width: 100%;
+        margin: 20px 0;
+    }
+    .filter-button {
+        width: 100%;
+    }
+
+    .cuisine-filter-check {
+
+        width: 94%;
+        left: 2%;
+        justify-content: center;
+
+    }
+
+    .change-page-box {
+
+        width: 90%;
+  
+    }
+
+    .order-now {
+        border-radius: 5px;
+
+    }
+
+    .table-container {
+        margin: 0 14px;
+    }
+
+}
+
+

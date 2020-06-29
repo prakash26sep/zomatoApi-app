@@ -18,7 +18,7 @@ interface Props {
 }
 
 interface State {
-
+    toggleMenu: boolean
 }
 
 class Header extends React.Component<Props, State> {
@@ -28,7 +28,7 @@ class Header extends React.Component<Props, State> {
         super(props);
 
         this.state = {
-
+            toggleMenu: false
         }
     }
 
@@ -55,7 +55,23 @@ class Header extends React.Component<Props, State> {
         // const { t, i18n } = this.props;
         this.props.i18n.changeLanguage(e.target.value);
         this.props.changeLanguage(this.props.i18n.language);
+        this.setState({
 
+        })
+
+    }
+
+    toggleMenu = (e: any) => {
+
+        if (this.state.toggleMenu) {
+            this.setState({
+                toggleMenu: false
+            })
+        } else {
+            this.setState({
+                toggleMenu: true
+            })
+        }
     }
 
     render() {
@@ -65,27 +81,33 @@ class Header extends React.Component<Props, State> {
                 <div className="header">
                     <div className="logo">
 
-                        <Link to="/"><img src="zomato.png" alt="logo" /></Link>
+                        <Link to="/"><img id="toggleMenu" src="zomato.png" alt="logo" /></Link>
+                        <div><img onClick={this.toggleMenu} className="menu-button" src="list2.png" alt="expand" /></div>
 
-                        <DarkSwitch />
 
-                        <div className="text-sizer">
+                    </div>
+
+                    <div className={`right-nav ${this.state.toggleMenu ? "right-nav-show" : "right-nav-hide"}`} id="rightNav">
+
+                        <div className="khamba">|</div>
+
+                        <div className="center-menu"><DarkSwitch /></div>
+
+                        <div className="text-sizer center-menu">
                             <div>{t('textSize')}</div>
                             <span ><img id="plus" onClick={this.changeTextSize} src="plus.png" alt="plus" /></span>
                             <span><img id="minus" onClick={this.changeTextSize} src="minus.png" alt="minus" /></span>
                         </div>
 
-                    </div>
-
-                    <div className="right-nav">
                         <div>
                             <select value={this.props.selectedLanguage} onChange={this.changeLanguage} className="language-selector">
-
-                                <option selected={this.props.selectedLanguage === "en"} value="en">English</option>
-                                <option selected={this.props.selectedLanguage === "hi"} value="hi">हिन्दी</option>
+                                <option selected={this.props.i18n.language === "en"} value="en">Select Language</option>
+                                <option selected={this.props.i18n.language === "en"} value="en">English</option>
+                                <option selected={this.props.i18n.language === "hi"} value="hi">हिन्दी</option>
 
                             </select>
                         </div>
+                        <div className="khamba">|</div>
                         <div>{t('about')}</div>
                         <div><Link to="/search">{t('searchRestaurants')}</Link></div>
 

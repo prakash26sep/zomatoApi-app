@@ -328,32 +328,35 @@ class Search extends React.Component<Props, State> {
 
                         </div>
 
-                        <table className={`search-table ${this.props.fontSize === "small" ? "small-table" : this.props.fontSize === "medium" ? "medium-table" : "large-table"}`}>
-                            <tr>
-                                <th>Restaurant</th>
-                                <th>Name</th>
-                                <th>Average cost for two</th>
-                                <th>Address</th>
-                                <th>Timings</th>
-                                <th className="order-heading">Order Food</th>
-                            </tr>
-                            {this.state.apiResponse.restaurants.map((val: any) => {
-                                return (
-                                    <React.Fragment>
-                                        <tr>
-                                            <td><img alt="restaurant" src={val.restaurant.thumb === "" ? "/na.png" : val.restaurant.thumb} /></td>
-                                            <td>{val.restaurant.name}</td>
-                                            <td>{val.restaurant.average_cost_for_two}</td>
-                                            <td>{val.restaurant.location.address}</td>
-                                            <td>{val.restaurant.timings}</td>
-                                            <td><Link to="/order"><div className={`order-now ${this.props.darkTheme ? "dark-order-now" : ""}`} onClick={this.orderNow} id={val.restaurant.R.res_id}>Order Now</div></Link></td>
-                                        </tr>
-                                        {/* <tr></tr> */}
-                                    </React.Fragment>
-                                )
-                            })}
+                        <div className="table-container">
+                            <table className={`search-table ${this.props.fontSize === "small" ? "small-table" : this.props.fontSize === "medium" ? "medium-table" : "large-table"}`}>
+                                <tr>
+                                    <th>Restaurant</th>
+                                    <th>Name</th>
+                                    <th>Average cost for two</th>
+                                    <th>Address</th>
+                                    <th>Timings</th>
+                                    <th className="order-heading">Order Food</th>
+                                </tr>
+                                {this.state.apiResponse.restaurants.map((val: any) => {
+                                    return (
+                                        <React.Fragment>
+                                            <tr>
+                                                <td><img alt="restaurant" src={val.restaurant.thumb === "" ? "/na.png" : val.restaurant.thumb} /></td>
+                                                <td>{val.restaurant.name}</td>
+                                                <td>{val.restaurant.average_cost_for_two}</td>
+                                                <td>{val.restaurant.location.address}</td>
+                                                <td>{val.restaurant.timings}</td>
+                                                <td><Link to="/order"><div className={`order-now ${this.props.darkTheme ? "dark-order-now" : ""}`} onClick={this.orderNow} id={val.restaurant.R.res_id}>Order Now</div></Link></td>
+                                            </tr>
+                                            {/* <tr></tr> */}
+                                        </React.Fragment>
+                                    )
+                                })}
 
-                        </table>
+                            </table>
+                        </div>
+
 
                         <div className="change-page-box">
                             <div className="change-button" id="previous" onClick={this.changePage}>Previous</div>

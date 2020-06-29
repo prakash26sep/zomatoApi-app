@@ -95,7 +95,7 @@ function CustomizedSwitches(props: any) {
     };
 
     return (
-        <FormGroup>
+        <FormGroup style={{ fontFamily: "'Poiret One', cursive" }}>
 
             <FormControlLabel
                 control={<IOSSwitch checked={props.darkTheme} onChange={handleChange} name="checkedB" />}
